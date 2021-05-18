@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+ <ResearchProjectDef>
+    <defName>Stonestacking</defName>
+    <label>Stonestacking</label>
+    <description>gather pebble or rock chunks and stack them into drystack,or make them as material of walls.</description>
+    <baseCost>300</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tags>
+      <li>ClassicStart</li>
+    </tags>
+  <researchViewX>2.00</researchViewX>
+  <researchViewY>4.25</researchViewY>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>Stonecrushing</defName>
+    <label>Stonecrushing</label>
+    <description>crush rock chunks into crushed stone in order to make them as building material or make them into brick after research stonecutting.</description>
+    <baseCost>300</baseCost>
+    <techLevel>Medieval</techLevel>
+    <tags>
+      <li>ClassicStart</li>
+    </tags>
+  <researchViewX>3.00</researchViewX>
+  <researchViewY>4.25</researchViewY>
+  </ResearchProjectDef>
+  
+    <ResearchProjectDef>
+    <defName>EarlyMachining</defName>
+    <label>Early Machining</label>
+    <description>Using math and tools to make some complex siege engines or fortifications.</description>
+    <baseCost>300</baseCost>
+    <techLevel>Medieval</techLevel>
+    <prerequisites>
+      <li>Smithing</li>
+    </prerequisites>
+  <researchViewX>3.00</researchViewX>
+  <researchViewY>4.25</researchViewY>
+  </ResearchProjectDef>
+
+</Defs>

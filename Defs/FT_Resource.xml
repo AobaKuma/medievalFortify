@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+<ThingDef ParentName="ResourceBase" Name="FT_StoneBlocksBase" Abstract="True">
+    <description>Some piece of stone. Mostly useful for building long-lasting, simple structures especially when you don't have ability to making bricks.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/StoneBlocks</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <soundInteract>Stone_Drop</soundInteract>
+    <soundDrop>Stone_Drop</soundDrop>
+    <useHitPoints>false</useHitPoints>
+    <tradeability>Buyable</tradeability>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <MarketValue>0.9</MarketValue>
+      <SharpDamageMultiplier>0.6</SharpDamageMultiplier>
+      <BluntDamageMultiplier>1.0</BluntDamageMultiplier>
+      <Beauty>-5</Beauty>
+      <ConstructionSpeedFactor>0.8</ConstructionSpeedFactor>
+    </statBases>
+    <thingCategories>
+      <li>StoneBlocks</li>
+    </thingCategories>
+    <burnableByRecipe>false</burnableByRecipe>
+    <minRewardCount>10</minRewardCount>
+    <stuffProps>
+      <categories>
+        <li>Stony</li>
+      </categories>
+      <commonality>0.20</commonality> <!-- because there are so many stone types -->
+      <statOffsets>
+        <WorkToBuild>140</WorkToBuild>
+      </statOffsets>
+      <statFactors>
+        <MarketValue>0.1</MarketValue>
+        <MaxHitPoints>1.0</MaxHitPoints>
+        <Flammability>0</Flammability>
+        <WorkToBuild>3.0</WorkToBuild>
+        <WorkToMake>1.2</WorkToMake>
+        <DoorOpenSpeed>0.45</DoorOpenSpeed>
+        <BedRestEffectiveness>0.8</BedRestEffectiveness>
+        <MeleeWeapon_CooldownMultiplier>1.30</MeleeWeapon_CooldownMultiplier>
+      </statFactors>
+    </stuffProps>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+  </ThingDef>
+  
+	<!-- 
+	<ThingDef ParentName="FT_StoneBlocksBase"Name="FT_cobbleStoneBase" Abstract="True">
+    <description>An Egg-shaped rock which common to see everywhere,useful for building.</description>
+	<graphicData>
+      <texPath>Things/Item/Resource/cobbleStone</texPath>
+	  <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>1</Mass>
+    </statBases>
+    <stuffProps>
+	  <categories>
+        <li>Stony</li>
+      </categories>
+	  <appearance>CobbleStone</appearance>
+    </stuffProps>
+    </ThingDef>
+	-->
+    <StuffCategoryDef>
+    <defName>FT_Crushed</defName>
+    <label>Crushed</label>
+    <destroySoundSmall>BuildingDestroyed_Stone_Small</destroySoundSmall>
+    <destroySoundMedium>BuildingDestroyed_Stone_Medium</destroySoundMedium>
+    <destroySoundLarge>BuildingDestroyed_Stone_Big</destroySoundLarge>
+    </StuffCategoryDef>
+
+	<StuffCategoryDef>
+    <defName>FT_Cobble</defName>
+    <label>Cobble</label>
+    <destroySoundSmall>BuildingDestroyed_Stone_Small</destroySoundSmall>
+    <destroySoundMedium>BuildingDestroyed_Stone_Medium</destroySoundMedium>
+    <destroySoundLarge>BuildingDestroyed_Stone_Big</destroySoundLarge>
+    </StuffCategoryDef>
+	
+	<StuffAppearanceDef>
+		<defName>CobbleStone</defName>
+	</StuffAppearanceDef>
+	
+	<StuffAppearanceDef>
+		<defName>DryStack</defName>
+	</StuffAppearanceDef>
+  
+      <ThingDef ParentName="FT_StoneBlocksBase"> <!-- 卵石基類，加鋒利但是工作量高一點 -->
+    <defName>FT_cobbleStone</defName>
+    <label>CobbleStone</label>
+    <description>Cobble stone pieces,useful for building.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/cobbleStone</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(100,100,100)</color>
+    </graphicData>
+    <statBases>
+      <Mass>1</Mass>
+      <SharpDamageMultiplier>0.5</SharpDamageMultiplier>
+    </statBases>
+    <stuffProps>
+	  <categories>
+        <li>Stony</li>
+      </categories>
+	  <appearance>CobbleStone</appearance>
+      <color>(100,100,100)</color>
+      <soundImpactStuff>BulletImpact_Ground</soundImpactStuff>
+      <soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>
+      <soundMeleeHitBlunt>MeleeHit_Stone</soundMeleeHitBlunt>
+      <stuffAdjective>crushedStone</stuffAdjective>
+      <statFactors>
+        <Beauty>1.0</Beauty>  
+        <MaxHitPoints>0.8</MaxHitPoints>
+        <WorkToBuild>5.0</WorkToBuild>
+        <WorkToMake>1.2</WorkToMake>
+      </statFactors>
+    </stuffProps>
+  </ThingDef>
+  
+    <ThingDef ParentName="FT_StoneBlocksBase"> <!-- 碎石基類，加鋒利但是工作量高一點 -->
+    <defName>FT_crushedStone</defName>
+    <label>crushedStone</label>
+    <description>Crushed stone pieces,useful for building.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/crushedStone</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(100,100,100)</color>
+    </graphicData>
+    <statBases>
+      <Mass>1</Mass>
+      <SharpDamageMultiplier>1.2</SharpDamageMultiplier>
+    </statBases>
+    <stuffProps>
+	<categories>
+        <li>Stony</li>
+    </categories>
+	  <appearance>DryStack</appearance>
+      <color>(100,100,100)</color>
+      <soundImpactStuff>BulletImpact_Ground</soundImpactStuff>
+      <soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>
+      <soundMeleeHitBlunt>MeleeHit_Stone</soundMeleeHitBlunt>
+      <stuffAdjective>crushedStone</stuffAdjective>
+      <statFactors>
+        <Beauty>1.0</Beauty>  
+        <MaxHitPoints>1.1</MaxHitPoints>
+        <WorkToBuild>4.0</WorkToBuild>
+        <WorkToMake>1.1</WorkToMake>
+      </statFactors>
+    </stuffProps>
+  </ThingDef>
+  
+  
+    <ThingDef ParentName="StoneBlocksBase"> <!-- 通用石磚 -->
+    <defName>FT_Blocks</defName>
+    <label>blocks</label>
+    <description>Blocks of stone mixture. No prominent in various aspects.</description>
+    <graphicData>
+      <color>(100,100,100)</color>
+    </graphicData>
+    <statBases>
+      <Mass>0.9</Mass>
+    </statBases>
+    <stuffProps>
+      <color>(100,100,100)</color>
+      <soundImpactStuff>BulletImpact_Ground</soundImpactStuff>
+      <soundMeleeHitSharp>MeleeHit_Stone</soundMeleeHitSharp>
+      <soundMeleeHitBlunt>MeleeHit_Stone</soundMeleeHitBlunt>
+      <stuffAdjective>slate</stuffAdjective>
+      <statFactors>
+        <Beauty>1.0</Beauty>
+        <MaxHitPoints>1.5</MaxHitPoints>
+      </statFactors>
+    </stuffProps>
+  </ThingDef>
+
+ <!-- 各種製作 -->
+ 
+   <RecipeDef Name="FT_MakeStonesBase" Abstract="True">
+    <jobString>crushing stones from chunk.</jobString>
+    <workAmount>800</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>CutStone</effectWorking>
+    <soundWorking>Recipe_MakeStoneBlocks</soundWorking>
+    <targetCountAdjustment>20</targetCountAdjustment>
+    <recipeUsers>
+      <li>TableStonecutter</li>
+    </recipeUsers>
+  </RecipeDef>
+ 
+  <RecipeDef ParentName="FT_MakeStonesBase">
+    <defName>Make_FT_crushedStone</defName>
+    <label>crush Stone</label>
+    <description>crush any chunks into usable stones.</description>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>StoneChunks</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+          <categories>
+            <li>StoneChunks</li>
+          </categories>
+    </fixedIngredientFilter>
+    <products>
+      <FT_crushedStone>10</FT_crushedStone>
+    </products>
+  </RecipeDef>
+  
+    <RecipeDef ParentName="FT_MakeStonesBase">
+    <defName>Make_FT_Blocks</defName>
+    <label>cut crushed stone into blocks</label>
+    <description>cut crushed stone into usable blocks.</description>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>FT_crushedStone</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+          <thingDefs>
+            <li>FT_crushedStone</li>
+          </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <FT_Blocks>30</FT_Blocks>
+    </products>
+  </RecipeDef>
+  
+</Defs>
