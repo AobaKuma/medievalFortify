@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+ <Operation Class="PatchOperationSequence">
+        <success>Always</success>
+        <operations>
+                <li Class="PatchOperationReplace">
+                    <xpath>/Defs/ResearchProjectDef[defName="ComplexFurniture"]/researchViewX</xpath>
+                    <value>												
+					<researchViewX>1.00</researchViewX>
+                    </value>
+                </li>
+				<li Class="PatchOperationReplace">
+                    <xpath>/Defs/ResearchProjectDef[defName="ComplexFurniture"]/researchViewY</xpath>
+                    <value>												
+					<researchViewY>4.90</researchViewY>
+                    </value>
+                </li>
+				
+                <li Class="PatchOperationReplace">
+                    <xpath>/Defs/ResearchProjectDef[defName="Stonecutting"]/researchViewX</xpath>
+                    <value>												
+					<researchViewX>4.00</researchViewX>
+                    </value>
+                </li>
+				<li Class="PatchOperationReplace">
+                    <xpath>/Defs/ResearchProjectDef[defName="Stonecutting"]/researchViewY</xpath>
+                    <value>												
+					<researchViewY>4.25</researchViewY>
+                    </value>
+                </li>
+                <li Class="PatchOperationReplace">
+                    <xpath>/Defs/ResearchProjectDef[defName="Machining"]/prerequisites</xpath>
+                    <value>												
+					<prerequisites>
+						<li>Electricity</li>
+						<li>EarlyMachining</li>
+					</prerequisites>
+                    </value>
+                </li>
+        </operations>
+    </Operation>
+
+</Patch>
